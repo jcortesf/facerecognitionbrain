@@ -9,7 +9,7 @@ import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import './App.css';
 
 const app = new Clarifai.App({
- apiKey: '47561cd949be496f9feebdd9d573624e'
+ apiKey: '47561cd949be496f9feebdd9d573624e' 
 });
 
 const particlesOptions = {
@@ -61,7 +61,7 @@ class App extends Component {
     this.setState({imageUrl: this.state.input})
     app.models
     .predict(
-      Clarifai.FACE_DETECT_MODEL, //COLOR_MODEL
+      'c0c0ac362b03416da06ab3fa36fb58e3', //Clarifai.FACE_DETECT_MODEL
       this.state.input)
     .then(response => this.displayFaceBox(this.calculateFaceLocation(response)))
     .catch(err => console.log(err));
